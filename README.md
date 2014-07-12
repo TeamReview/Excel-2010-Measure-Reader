@@ -35,4 +35,4 @@ An .msi and a setup.exe file are located within the directory "Excel 2010 Measur
 Sample Excel File with Data Model
 =================================
 
-For demonstration purposes, a copy of an excel xlsx file with a PowerPivot data model has been included.
+For demonstration purposes, a copy of an Excel xlsx file with a PowerPivot data model has been included.
