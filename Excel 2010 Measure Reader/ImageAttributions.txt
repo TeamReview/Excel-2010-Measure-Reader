@@ -1,0 +1,8 @@
+﻿// All images used in this application were downloaded as free for personal/commercial use by their authors
+// from the following urls:
+// Excel images were downloaded from
+// https://www.iconfinder.com/icons/272709/excel_icon#size=48 
+// The folder image was downloaded from
+// http://www.creativefreedom.co.uk/free-icons/free-windows-7-icons/
+// The hard drive image was downloaded from 
+// https://www.iconfinder.com/icons/302525/drive_folder_normal_white_icon#size=128

@@ -1,0 +1,11 @@
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\bin\Debug\Excel 2010 Measure Reader.exe.config
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\bin\Debug\Excel 2010 Measure Reader.exe
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\bin\Debug\Excel 2010 Measure Reader.pdb
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\bin\Debug\Ionic.Zip.dll
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel 2010 Measure Reader.csprojResolveAssemblyReference.cache
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel_2010_Measure_Reader.ExcelTreeView.resources
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel_2010_Measure_Reader.Main.resources
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel_2010_Measure_Reader.Properties.Resources.resources
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel 2010 Measure Reader.csproj.GenerateResource.Cache
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel 2010 Measure Reader.exe
+C:\Users\bbb\Documents\GitHub\Excel-2010-Measure-Reader\Excel 2010 Measure Reader\obj\x86\Debug\Excel 2010 Measure Reader.pdb
