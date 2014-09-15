@@ -4,7 +4,10 @@ using System.Linq;
 using Ionic.Zip;
 
 namespace Excel_2010_Measure_Reader
-{
+{    
+    // An Excel xlsx file is a zipped file. Using ZipFile as its parent allows ExcelFile 
+    // to be responsible for extracting its own items.
+
     internal class ExcelFile : ZipFile
     {
         public ExcelFile(string filePath) : base(filePath)
@@ -13,25 +16,30 @@ namespace Excel_2010_Measure_Reader
 
         public string GetMeasures()
         {
-            IOrderedEnumerable<ZipEntry> entries = from entry in SelectEntries(@"customXml\Item*.xml").AsEnumerable()
-                where !entry.FileName.Contains("Props")
-                orderby entry.UncompressedSize descending
-                select entry;
+            // When unzipped, Excel 2010 files have their measures stored in an xml file located
+            // under the customXml folder.  The name of the file will not always be exactly the
+            // same, but will start with "Item" and have an extension of "xml". An additional 
+            // criteria for finding the file is its size (almost always it is the largest file).
 
-            string measures = string.Empty;
+            var entries = SelectEntries(@"customXml\Item*.xml").AsEnumerable()
+                .Where(entry => !entry.FileName.Contains("Props"))
+                .OrderByDescending(entry => entry.UncompressedSize)
+                .Select(entry => entry);
 
-            foreach (ZipEntry entry in entries)
+            var measures = string.Empty;
+
+            foreach (var entry in entries)
             {
                 using (var memoryStream = new MemoryStream())
                 {
                     entry.Extract(memoryStream);
-                    string text = MemoryStreamToText(memoryStream, 0);
-                    int startIndex = text.IndexOf("CREATE MEASURE", StringComparison.Ordinal);
+                    var text = MemoryStreamToText(memoryStream, 0);
+                    var startIndex = text.IndexOf("CREATE MEASURE", StringComparison.Ordinal);
 
                     if (startIndex < 0) continue;
 
                     measures = text.Substring(startIndex);
-                    int endIndex = measures.IndexOf("</Text>", StringComparison.Ordinal);
+                    var endIndex = measures.IndexOf("</Text>", StringComparison.Ordinal);
 
                     if (endIndex > 0)
                     {
@@ -41,7 +49,7 @@ namespace Excel_2010_Measure_Reader
                 }
             }
 
-            return Cleanse(measures);
+            return AlphaSort(Cleanse(measures));
         }
 
         private string Cleanse(string measures)
@@ -52,18 +60,31 @@ namespace Excel_2010_Measure_Reader
                 .Replace("CREATE MEASURE ", "");
         }
 
-        private static string MemoryStreamToText(MemoryStream memoryStream, int startPosition)
+        private string AlphaSort(string measures)
         {
-            memoryStream.Position = startPosition;
+            // handle special cases where the zipped version of the Excel file contains more than one measure on a single line
+            var measuresSeparated = measures.Split(';').AsEnumerable().Select(measure => measure.Trim());
+            var measuresSorted = measuresSeparated.AsEnumerable().OrderBy(measure => measure.ToUpper()).Select(measure => measure);
+            var measuresToString = "";
 
-            using (var streamReader = new StreamReader(memoryStream))
+            foreach (var measure in measuresSorted)
+            {
+                if (! string.IsNullOrEmpty(measure.Trim()))
+                {
+                    measuresToString += measure.Trim() + ";" + Environment.NewLine;
+                }
+            }
+            return measuresToString;
+        }
+
+        private string MemoryStreamToText(Stream stream, int startPosition)
+        {
+            stream.Position = startPosition;
+
+            using (var streamReader = new StreamReader(stream))
             {
                 return streamReader.ReadToEnd();
             }
         }
-    }
-
-    public class ExcelException : ZipException
-    {
     }
 }

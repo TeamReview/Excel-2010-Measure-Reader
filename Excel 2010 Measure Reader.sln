@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel 2010 Measure Reader", "Excel 2010 Measure Reader\Excel 2010 Measure Reader.csproj", "{523766E1-27D6-48E8-8102-E737229C176A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Excel 2010 Measure Reader Program", "Excel 2010 Measure Reader Installer\Excel 2010 Measure Reader Installer.vdproj", "{0AFEBFFC-3B32-4618-B011-A5E02B12220C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,18 @@ Global
 		{523766E1-27D6-48E8-8102-E737229C176A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{523766E1-27D6-48E8-8102-E737229C176A}.Release|x86.ActiveCfg = Release|x86
 		{523766E1-27D6-48E8-8102-E737229C176A}.Release|x86.Build.0 = Release|x86
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|Any CPU.ActiveCfg = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|Any CPU.Build.0 = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|Mixed Platforms.Build.0 = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|x86.ActiveCfg = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Debug|x86.Build.0 = Debug
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|Any CPU.ActiveCfg = Release
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|Any CPU.Build.0 = Release
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|Mixed Platforms.ActiveCfg = Release
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|Mixed Platforms.Build.0 = Release
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|x86.ActiveCfg = Release
+		{0AFEBFFC-3B32-4618-B011-A5E02B12220C}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

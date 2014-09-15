@@ -47,6 +47,7 @@
             this.ImageList = this.imageList;
             this.LineColor = System.Drawing.Color.Black;
             this.SelectedImageIndex = 0;
+            this.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.ExcelTreeView_AfterCheck);
             this.ResumeLayout(false);
 
         }
